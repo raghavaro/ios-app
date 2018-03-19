@@ -13,6 +13,8 @@
 		233BDEB5204FEFE500C06732 /* OwnCloudTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 233BDEB4204FEFE500C06732 /* OwnCloudTests.swift */; };
 		6D107AA0B21417432C72755A /* EarlGrey.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7F3B3E74D4B04F9CAF95C09 /* EarlGrey.swift */; };
 		75AC0B4AD332C8CC785FE349 /* Pods_ownCloudTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A56EA84D8AD331FFA604138B /* Pods_ownCloudTests.framework */; };
+		838767FE205A4F160080B3BA /* OwnCloudUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 838767FD205A4F160080B3BA /* OwnCloudUITests.swift */; };
+		83876806205A4FBB0080B3BA /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83876805205A4FBB0080B3BA /* SnapshotHelper.swift */; };
 		A45A8D98137C902524B84E6D /* EarlGrey.framework in EarlGrey Copy Files */ = {isa = PBXBuildFile; fileRef = D0D9C062DD1E85A838608B0F /* EarlGrey.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		DC0B378D205146D300189B9A /* ownCloudSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC4AF6E52051466800189B9A /* ownCloudSDK.framework */; };
 		DC0B378E205146D900189B9A /* ownCloudSDK.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = DC4AF6E52051466800189B9A /* ownCloudSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -33,6 +35,13 @@
 
 /* Begin PBXContainerItemProxy section */
 		233BDEB1204FEFE500C06732 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 233BDE94204FEFE500C06732 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 233BDE9B204FEFE500C06732;
+			remoteInfo = ownCloud;
+		};
+		83876800205A4F160080B3BA /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 233BDE94204FEFE500C06732 /* Project object */;
 			proxyType = 1;
@@ -105,6 +114,10 @@
 		233BDEB6204FEFE500C06732 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		233BDEBF204FEFF300C06732 /* ownCloudSDK.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ownCloudSDK.xcodeproj; path = "../ios-sdk/ownCloudSDK.xcodeproj"; sourceTree = "<group>"; };
 		6CBDF92D3844CF78B20B5770 /* Pods-ownCloudTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ownCloudTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ownCloudTests/Pods-ownCloudTests.release.xcconfig"; sourceTree = "<group>"; };
+		838767FB205A4F160080B3BA /* ownCloudUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ownCloudUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		838767FD205A4F160080B3BA /* OwnCloudUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OwnCloudUITests.swift; sourceTree = "<group>"; };
+		838767FF205A4F160080B3BA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		83876805205A4FBB0080B3BA /* SnapshotHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnapshotHelper.swift; sourceTree = "<group>"; };
 		A56EA84D8AD331FFA604138B /* Pods_ownCloudTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ownCloudTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0D9C062DD1E85A838608B0F /* EarlGrey.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EarlGrey.framework; path = Pods/EarlGrey/EarlGrey/EarlGrey.framework; sourceTree = SOURCE_ROOT; };
 		D7F3B3E74D4B04F9CAF95C09 /* EarlGrey.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = EarlGrey.swift; sourceTree = "<group>"; };
@@ -141,6 +154,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		838767F8205A4F160080B3BA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -150,6 +170,7 @@
 				233BDEBF204FEFF300C06732 /* ownCloudSDK.xcodeproj */,
 				233BDE9E204FEFE500C06732 /* ownCloud */,
 				233BDEB3204FEFE500C06732 /* ownCloudTests */,
+				838767FC205A4F160080B3BA /* ownCloudUITests */,
 				233BDE9D204FEFE500C06732 /* Products */,
 				DC85573220513CC700189B9A /* Frameworks */,
 				5EE06126BB49344475598790 /* Pods */,
@@ -161,6 +182,7 @@
 			children = (
 				233BDE9C204FEFE500C06732 /* ownCloud.app */,
 				233BDEB0204FEFE500C06732 /* ownCloudTests.xctest */,
+				838767FB205A4F160080B3BA /* ownCloudUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -197,6 +219,16 @@
 				6CBDF92D3844CF78B20B5770 /* Pods-ownCloudTests.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		838767FC205A4F160080B3BA /* ownCloudUITests */ = {
+			isa = PBXGroup;
+			children = (
+				83876805205A4FBB0080B3BA /* SnapshotHelper.swift */,
+				838767FD205A4F160080B3BA /* OwnCloudUITests.swift */,
+				838767FF205A4F160080B3BA /* Info.plist */,
+			);
+			path = ownCloudUITests;
 			sourceTree = "<group>";
 		};
 		DC4AF6DF2051466800189B9A /* Products */ = {
@@ -320,6 +352,24 @@
 			productReference = 233BDEB0204FEFE500C06732 /* ownCloudTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		838767FA205A4F160080B3BA /* ownCloudUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 83876802205A4F160080B3BA /* Build configuration list for PBXNativeTarget "ownCloudUITests" */;
+			buildPhases = (
+				838767F7205A4F160080B3BA /* Sources */,
+				838767F8205A4F160080B3BA /* Frameworks */,
+				838767F9205A4F160080B3BA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				83876801205A4F160080B3BA /* PBXTargetDependency */,
+			);
+			name = ownCloudUITests;
+			productName = ownCloudUITests;
+			productReference = 838767FB205A4F160080B3BA /* ownCloudUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -347,6 +397,11 @@
 						ProvisioningStyle = Automatic;
 						TestTargetID = 233BDE9B204FEFE500C06732;
 					};
+					838767FA205A4F160080B3BA = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 233BDE9B204FEFE500C06732;
+					};
 				};
 			};
 			buildConfigurationList = 233BDE97204FEFE500C06732 /* Build configuration list for PBXProject "ownCloud" */;
@@ -370,6 +425,7 @@
 			targets = (
 				233BDE9B204FEFE500C06732 /* ownCloud */,
 				233BDEAF204FEFE500C06732 /* ownCloudTests */,
+				838767FA205A4F160080B3BA /* ownCloudUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -411,6 +467,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		233BDEAE204FEFE500C06732 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		838767F9205A4F160080B3BA /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -514,6 +577,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		838767F7205A4F160080B3BA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				838767FE205A4F160080B3BA /* OwnCloudUITests.swift in Sources */,
+				83876806205A4FBB0080B3BA /* SnapshotHelper.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -521,6 +593,11 @@
 			isa = PBXTargetDependency;
 			target = 233BDE9B204FEFE500C06732 /* ownCloud */;
 			targetProxy = 233BDEB1204FEFE500C06732 /* PBXContainerItemProxy */;
+		};
+		83876801205A4F160080B3BA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 233BDE9B204FEFE500C06732 /* ownCloud */;
+			targetProxy = 83876800205A4F160080B3BA /* PBXContainerItemProxy */;
 		};
 		DC0B3789205146C900189B9A /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -659,7 +736,7 @@
 				DEVELOPMENT_TEAM = 4AP2STM4H5;
 				INFOPLIST_FILE = ownCloud/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.owncloud.newAppTest;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.owncloud.ios-app";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
@@ -678,7 +755,7 @@
 				DEVELOPMENT_TEAM = 4AP2STM4H5;
 				INFOPLIST_FILE = ownCloud/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.owncloud.newAppTest;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.owncloud.ios-app";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
@@ -693,7 +770,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 9B5WD74GWJ;
+				DEVELOPMENT_TEAM = 4AP2STM4H5;
 				INFOPLIST_FILE = ownCloudTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.owncloud.ownCloudTests;
@@ -711,7 +788,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 9B5WD74GWJ;
+				DEVELOPMENT_TEAM = 4AP2STM4H5;
 				INFOPLIST_FILE = ownCloudTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.owncloud.ownCloudTests;
@@ -719,6 +796,36 @@
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ownCloud.app/ownCloud";
+			};
+			name = Release;
+		};
+		83876803205A4F160080B3BA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4AP2STM4H5;
+				INFOPLIST_FILE = ownCloudUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.owncloud.ios-app.ownCloudUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = ownCloud;
+			};
+			name = Debug;
+		};
+		83876804205A4F160080B3BA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4AP2STM4H5;
+				INFOPLIST_FILE = ownCloudUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.owncloud.ios-app.ownCloudUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = ownCloud;
 			};
 			name = Release;
 		};
@@ -748,6 +855,15 @@
 			buildConfigurations = (
 				233BDEBD204FEFE600C06732 /* Debug */,
 				233BDEBE204FEFE600C06732 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		83876802205A4F160080B3BA /* Build configuration list for PBXNativeTarget "ownCloudUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				83876803205A4F160080B3BA /* Debug */,
+				83876804205A4F160080B3BA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
