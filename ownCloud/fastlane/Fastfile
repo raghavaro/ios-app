@@ -21,6 +21,7 @@ end
 
 lane :beta do
   desc "Upload to TestFlight"
+  increment_build_number xcodeproj: "ownCloud.xcodeproj"
   build_app(scheme: "ownCloud")
   upload_to_testflight
 end
