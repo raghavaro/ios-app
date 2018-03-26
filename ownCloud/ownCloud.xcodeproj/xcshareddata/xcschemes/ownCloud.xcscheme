@@ -108,6 +108,7 @@
    </AnalyzeAction>
    <ArchiveAction
       buildConfiguration = "Release"
+      customArchiveName = "ownCloud"
       revealArchiveInOrganizer = "YES">
    </ArchiveAction>
 </Scheme>
