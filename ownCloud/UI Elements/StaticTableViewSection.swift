@@ -23,8 +23,7 @@ class StaticTableViewSection: NSObject {
 
 	public var identifier : String?
 
-	public var rows : [StaticTableViewRow] = Array()
-
+    public var rows : [StaticTableViewRow] = Array()
 	public var headerTitle : String?
 	public var footerTitle : String?
 
@@ -77,6 +76,7 @@ class StaticTableViewSection: NSObject {
     func remove(rows rowsToRemove: [StaticTableViewRow]) {
         for row in rowsToRemove {
             if let index = rows.index(of: row) {
+
                 rows.remove(at: index)
             }
         }
@@ -117,4 +117,11 @@ class StaticTableViewSection: NSObject {
 
 		return nil
 	}
+
+    // MARK: - Reload
+    func reload() {
+        if let id = self.identifier {
+            self.viewController?.reloadSection(id: id)
+        }
+    }
 }
