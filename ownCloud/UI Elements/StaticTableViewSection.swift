@@ -74,6 +74,14 @@ class StaticTableViewSection: NSObject {
 		return radioGroupRows
 	}
 
+    func remove(rows rowsToRemove: [StaticTableViewRow]) {
+        for row in rowsToRemove {
+            if let index = rows.index(of: row) {
+                rows.remove(at: index)
+            }
+        }
+    }
+
 	// MARK: - Radio group value setter/getter
 	func selectedValue(forGroupIdentifier groupIdentifier: String) -> Any? {
 		for row in rows {
