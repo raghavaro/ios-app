@@ -159,7 +159,7 @@ class BookmarkViewController: StaticTableViewController, OCClassSettingsSupport 
                         self.bookmarkToAdd?.name = (serverName != nil && serverName != "") ? serverName: self.bookmarkToAdd!.url.absoluteString
                         self.bookmarkToAdd?.authenticationMethodIdentifier = authenticationMethodIdentifier
                         self.bookmarkToAdd?.authenticationData = authenticationData
-                        BookmarkManager.sharedBookmarkManager.addBookmark(self.bookmarkToAdd!)
+                        BookmarkManager.shared.addBookmark(self.bookmarkToAdd!)
 
                         DispatchQueue.main.async {
                             self.navigationController?.popViewController(animated: true)
