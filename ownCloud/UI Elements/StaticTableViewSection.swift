@@ -39,7 +39,7 @@ class StaticTableViewSection: NSObject {
 	}
 
 	// MARK: - Adding rows
-	func add(rows rowsToAdd: [StaticTableViewRow]) {
+    func add(rows rowsToAdd: [StaticTableViewRow], animated: Bool = false) {
 		// Add reference to section to row
 		for row in rowsToAdd {
 			if row.section == nil {
@@ -52,6 +52,10 @@ class StaticTableViewSection: NSObject {
 		// Append to rows
 		rows.append(contentsOf: rowsToAdd)
 	}
+
+    func add(row: StaticTableViewRow) {
+        rows.append(row)
+    }
 
     func insert(row rowToAdd: StaticTableViewRow, at index: Int) {
         if rowToAdd.section == nil {
@@ -89,6 +93,10 @@ class StaticTableViewSection: NSObject {
                 rows.remove(at: index)
             }
         }
+    }
+
+    func delete(row: StaticTableViewRow, at index: Int) {
+        rows.remove(at: index)
     }
 
 	// MARK: - Radio group value setter/getter
