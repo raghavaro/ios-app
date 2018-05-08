@@ -118,6 +118,7 @@ class SecuritySettings: StaticTableViewSection {
                         hiddenOverlay:true,
                         handler: {
                             if OCAppIdentity.shared().keychain.readDataFromKeychainItem(forAccount: passcodeKeychainAccount, path: passcodeKeychainPath) != nil {
+                                //Activated
                                 self.userDefaults.set(self.passcodeEnabled, forKey: SecuritySettingsPasscodeKey)
                             } else {
                                 //Cancelled
@@ -132,7 +133,8 @@ class SecuritySettings: StaticTableViewSection {
                         mode: PasscodeInterfaceMode.deletePasscode,
                         hiddenOverlay:true,
                         handler: {
-                            if OCAppIdentity.shared().keychain.readDataFromKeychainItem(forAccount: passcodeKeychainAccount, path: passcodeKeychainPath) != nil {
+                            if OCAppIdentity.shared().keychain.readDataFromKeychainItem(forAccount: passcodeKeychainAccount, path: passcodeKeychainPath) == nil {
+                                //Deleted
                                 self.userDefaults.set(self.passcodeEnabled, forKey: SecuritySettingsPasscodeKey)
                             } else {
                                 //Cancelled
@@ -190,5 +192,6 @@ class SecuritySettings: StaticTableViewSection {
             self.biometricalSecurityEnabled = false
             self.remove(biometricalRow!)
         }
+        self.passcodeRow?.value = self.passcodeEnabled
     }
 }
