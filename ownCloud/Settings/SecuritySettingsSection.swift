@@ -110,6 +110,15 @@ class SecuritySettings: StaticTableViewSection {
             if let value = row.value as? Bool {
                 self.passcodeEnabled = value
                 self.userDefaults.set(self.passcodeEnabled, forKey: SecuritySettingsPasscodeKey)
+
+                if self.passcodeEnabled {
+                    let passcodeViewController:PasscodeViewController = PasscodeViewController(mode: PasscodeInterfaceMode.addPasscodeFirstStep, passcodeFromFirstStep: nil, hiddenOverlay:true)
+                    self.viewController?.present(passcodeViewController, animated: true, completion: nil)
+                } else {
+                    let passcodeViewController:PasscodeViewController = PasscodeViewController(mode: PasscodeInterfaceMode.deletePasscode, passcodeFromFirstStep: nil, hiddenOverlay:true)
+                    self.viewController?.present(passcodeViewController, animated: true, completion: nil)
+                }
+
                 self.updateUI()
             }
         }, title: "Passcode Lock".localized, value: self.passcodeEnabled)
