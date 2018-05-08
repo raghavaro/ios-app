@@ -8,6 +8,7 @@
 
 import UIKit
 import LocalAuthentication
+import ownCloudSDK
 
 // MARK: - Security UserDefaults keys
 public let SecuritySettingsfrequencyKey: String =  "security-settings-frequency"
@@ -109,13 +110,36 @@ class SecuritySettings: StaticTableViewSection {
         passcodeRow = StaticTableViewRow(switchWithAction: { (row, _) in
             if let value = row.value as? Bool {
                 self.passcodeEnabled = value
-                self.userDefaults.set(self.passcodeEnabled, forKey: SecuritySettingsPasscodeKey)
 
                 if self.passcodeEnabled {
-                    let passcodeViewController:PasscodeViewController = PasscodeViewController(mode: PasscodeInterfaceMode.addPasscodeFirstStep, passcodeFromFirstStep: nil, hiddenOverlay:true)
+                    //Activate passcode
+                    let passcodeViewController:PasscodeViewController = PasscodeViewController(
+                        mode: PasscodeInterfaceMode.addPasscodeFirstStep,
+                        hiddenOverlay:true,
+                        handler: {
+                            if OCAppIdentity.shared().keychain.readDataFromKeychainItem(forAccount: passcodeKeychainAccount, path: passcodeKeychainPath) != nil {
+                                self.userDefaults.set(self.passcodeEnabled, forKey: SecuritySettingsPasscodeKey)
+                            } else {
+                                //Cancelled
+                                self.passcodeEnabled = false
+                                self.updateUI()
+                            }
+                    })
                     self.viewController?.present(passcodeViewController, animated: true, completion: nil)
                 } else {
-                    let passcodeViewController:PasscodeViewController = PasscodeViewController(mode: PasscodeInterfaceMode.deletePasscode, passcodeFromFirstStep: nil, hiddenOverlay:true)
+                    //Delete passcode
+                    let passcodeViewController:PasscodeViewController = PasscodeViewController(
+                        mode: PasscodeInterfaceMode.deletePasscode,
+                        hiddenOverlay:true,
+                        handler: {
+                            if OCAppIdentity.shared().keychain.readDataFromKeychainItem(forAccount: passcodeKeychainAccount, path: passcodeKeychainPath) != nil {
+                                self.userDefaults.set(self.passcodeEnabled, forKey: SecuritySettingsPasscodeKey)
+                            } else {
+                                //Cancelled
+                                self.passcodeEnabled = true
+                                self.updateUI()
+                            }
+                    })
                     self.viewController?.present(passcodeViewController, animated: true, completion: nil)
                 }
 
